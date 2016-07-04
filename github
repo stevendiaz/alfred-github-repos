@@ -29,8 +29,8 @@ class Github
     results = repos.select do |repo|
       repo['name'] =~ Regexp.new(query, 'i')
     end
-    results += search_all_repos(query)
-    results
+    results += search_all_repos(query) if query =~ /\//
+    results.uniq
   end
 
   def rebuild_user_repos_cache

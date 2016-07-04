@@ -28,4 +28,8 @@ class XmlBuilder
       </item>
     eos
   end
+
+  def hash
+    @uid
+  end
 end
